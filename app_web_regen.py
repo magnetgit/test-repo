@@ -30,7 +30,7 @@ CACHE_EMB = os.path.join(EMB_DIR, "em01.npy")                  # 임베딩 결�
 EMBED_MODEL = "text-embedding-3-small"
 CHAT_MODEL = "gpt-4o-mini"
 
-load_dotenv(ENV_PATH)
+os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 if not OPENAI_API_KEY:
     raise ValueError("OPENAI_API_KEY가 Projects 폴더의 .env 파일에 설정되어 있지 않습니다.")
