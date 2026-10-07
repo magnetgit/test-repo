@@ -3,7 +3,7 @@ import shutil
 import pandas as pd
 import numpy as np
 import streamlit as st
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 from openai import OpenAI
 
 # =========================================================
@@ -18,7 +18,7 @@ from openai import OpenAI
 # (0) 경로/환경 설정
 APP_DIR = os.path.dirname(os.path.abspath(__file__))       # ...\rag
 PROJECTS_DIR = os.path.dirname(APP_DIR)                    # ...\Projects
-ENV_PATH = os.path.join(PROJECTS_DIR, ".env")
+#ENV_PATH = os.path.join(PROJECTS_DIR, ".env")
 
 ORIGIN_DIR = os.path.join(APP_DIR, "origin")
 EMB_DIR = os.path.join(APP_DIR, "embedding")
@@ -181,7 +181,7 @@ def ask_llm(question: str, snippets: list[str]) -> str:
 
 # (2) Streamlit UI
 st.set_page_config(page_title="RAG 매뉴얼 Q&A (Cache Regenerate)", layout="wide")
-st.title("사내 매뉴얼 Q&A ('캐시 삭제/재생성' 확장)")
+st.title("사내 매뉴얼 Q&A ('캐시 삭제/재생성' 확장) Git")
 st.caption("버튼 클릭 시.. embedding 디렉토리를 삭제하고, company_manual01.csv 기반으로 em01.csv와 em01.npy를 재생성")
 
 # session_state 초기화
